@@ -1,59 +1,60 @@
-import Head from 'next/head';
-import { useState } from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
-import FadeInSection from '../components/FadeInSection';
+import Head from "next/head";
+import { useState } from "react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import FadeInSection from "../components/FadeInSection";
 
 /* ── Contact info cards ───────────────────────────────────────────────── */
 const contactCards = [
   {
     icon: <Phone className="w-7 h-7 text-blue-600" />,
-    label: 'Phone',
-    value: '0452 620 693',
-    href: 'tel:0452620693',
+    label: "Phone",
+    value: "0452 620 693",
+    href: "tel:0452620693",
   },
   {
     icon: <Mail className="w-7 h-7 text-blue-600" />,
-    label: 'Email',
-    value: 'akeyzer2@icloud.com',
-    href: 'mailto:akeyzer2@icloud.com',
+    label: "Email",
+    value: "akeyzer2@icloud.com",
+    href: "mailto:akeyzer2@icloud.com",
   },
   {
     icon: <MapPin className="w-7 h-7 text-blue-600" />,
-    label: 'Location',
-    value: 'Perth, Western Australia',
+    label: "Location",
+    value: "Perth, Western Australia",
     href: null,
   },
 ];
 
 const services = [
-  'Office & Workspace Cleaning',
-  'Restaurant & Kitchen Cleaning',
-  'Medical & Dental Clinic Cleaning',
-  'School & Classroom Cleaning',
-  'Regular Scheduled Cleaning',
-  'Other',
+  "Office & Workspace Cleaning",
+  "Restaurant & Kitchen Cleaning",
+  "Medical & Dental Clinic Cleaning",
+  "School & Classroom Cleaning",
+  "Regular Scheduled Cleaning",
+  "Other",
 ];
 
 const serviceAreas = [
-  'Perth CBD',
-  'Subiaco',
-  'Fremantle',
-  'Joondalup',
-  'Midland',
-  'Rockingham',
-  'Mandurah',
-  'Armadale',
+  "Perth CBD",
+  "Bunbury",
+  "Subiaco",
+  "Fremantle",
+  "Joondalup",
+  "Midland",
+  "Rockingham",
+  "Mandurah",
+  "Armadale",
 ];
 
 export default function ContactPage() {
   // Controlled form state (static — no backend submission)
   const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    phone: '',
-    email: '',
-    service: '',
-    message: '',
+    name: "",
+    company: "",
+    phone: "",
+    email: "",
+    service: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -76,7 +77,10 @@ export default function ContactPage() {
           content="Contact SmartSpace Commercial Cleaning for a free quote. Serving Perth and all of Western Australia."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://smartspacecleaning.com.au/contact" />
+        <link
+          rel="canonical"
+          href="https://smartspacecleaning.com.au/contact"
+        />
         <meta
           property="og:title"
           content="Contact SmartSpace | Get a Free Cleaning Quote Perth WA"
@@ -90,10 +94,12 @@ export default function ContactPage() {
       {/* ── Page Hero Banner ─────────────────────────────────────────────── */}
       <FadeInSection>
         <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-24 px-4 text-white text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Get in Touch</h1>
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
+            Get in Touch
+          </h1>
           <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
-            Ready for a cleaner workspace? Fill in the form below or call us directly.
-            We&rsquo;ll get back to you within 24 hours.
+            Ready for a cleaner workspace? Fill in the form below or call us
+            directly. We&rsquo;ll get back to you within 24 hours.
           </p>
         </section>
       </FadeInSection>
@@ -134,9 +140,11 @@ export default function ContactPage() {
         <section className="py-16 bg-white">
           <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Send an Enquiry</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                Send an Enquiry
+              </h2>
               <p className="text-gray-500">
-                We&rsquo;ll get back to you within{' '}
+                We&rsquo;ll get back to you within{" "}
                 <span className="text-blue-600 font-semibold">24 hours</span>.
               </p>
             </div>
@@ -159,9 +167,12 @@ export default function ContactPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Enquiry Sent!</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Enquiry Sent!
+                </h3>
                 <p className="text-gray-600 text-sm">
-                  Thanks for reaching out. We&rsquo;ll be in touch within 24 hours.
+                  Thanks for reaching out. We&rsquo;ll be in touch within 24
+                  hours.
                 </p>
               </div>
             ) : (
@@ -173,7 +184,10 @@ export default function ContactPage() {
                 {/* Row 1: Name + Company */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="name" className="text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="name"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -188,7 +202,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="company" className="text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="company"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Company
                     </label>
                     <input
@@ -206,7 +223,10 @@ export default function ContactPage() {
                 {/* Row 2: Phone + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="phone" className="text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="phone"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Phone
                     </label>
                     <input
@@ -220,7 +240,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="email"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Email <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -238,7 +261,10 @@ export default function ContactPage() {
 
                 {/* Service dropdown */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="service" className="text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="service"
+                    className="text-sm font-medium text-gray-700"
+                  >
                     Service Required
                   </label>
                   <select
@@ -259,7 +285,10 @@ export default function ContactPage() {
 
                 {/* Message */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="message" className="text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="message"
+                    className="text-sm font-medium text-gray-700"
+                  >
                     Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -276,7 +305,8 @@ export default function ContactPage() {
 
                 {/* Notice */}
                 <p className="text-xs text-gray-400">
-                  We&rsquo;ll get back to you within 24 hours. Your details are kept private.
+                  We&rsquo;ll get back to you within 24 hours. Your details are
+                  kept private.
                 </p>
 
                 {/* Submit button */}
@@ -296,7 +326,9 @@ export default function ContactPage() {
       <FadeInSection>
         <section className="py-14 bg-blue-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">Service Areas</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+              Service Areas
+            </h2>
             <p className="text-gray-600 mb-7">
               We proudly serve businesses across Perth and surrounding suburbs:
             </p>

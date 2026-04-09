@@ -1,48 +1,48 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import TestimonialCard from '../components/TestimonialCard';
-import FadeInSection from '../components/FadeInSection';
+import Head from "next/head";
+import Link from "next/link";
+import TestimonialCard from "../components/TestimonialCard";
+import FadeInSection from "../components/FadeInSection";
 
 /* ── Testimonial data ─────────────────────────────────────────────────── */
 const testimonials = [
   {
-    name: 'James R.',
-    company: 'Perth CBD Office Manager',
+    name: "James R.",
+    company: "Perth CBD Office Manager",
     rating: 5,
     review:
-      'SmartSpace transformed our office. The team is punctual, thorough, and always professional. Highly recommend for any business.',
+      "SmartSpace transformed our office. The team is punctual, thorough, and always professional. Highly recommend for any business.",
   },
   {
-    name: 'Linda T.',
-    company: 'Subiaco Restaurant Owner',
+    name: "Linda T.",
+    company: "Subiaco Restaurant Owner",
     rating: 5,
     review:
-      'Our kitchen has never been cleaner. They understand hygiene standards and always go above and beyond. Exceptional service every visit.',
+      "Our kitchen has never been cleaner. They understand hygiene standards and always go above and beyond. Exceptional service every visit.",
   },
   {
-    name: 'Dr. Sarah M.',
-    company: 'Fremantle Dental Clinic',
+    name: "Dr. Sarah M.",
+    company: "Fremantle Dental Clinic",
     rating: 5,
     review:
-      'Exceptional attention to detail in our clinic. We trust SmartSpace completely with our sterilisation-sensitive environment.',
+      "Exceptional attention to detail in our clinic. We trust SmartSpace completely with our sterilisation-sensitive environment.",
   },
   {
-    name: 'Mark W.',
-    company: 'Joondalup School Principal',
+    name: "Mark W.",
+    company: "Joondalup School Principal",
     rating: 5,
     review:
-      'Reliable and consistent. Our classrooms are spotless every morning without fail. The students and staff really notice the difference.',
+      "Reliable and consistent. Our classrooms are spotless every morning without fail. The students and staff really notice the difference.",
   },
   {
-    name: 'Angela P.',
-    company: 'Midland Co-working Space',
+    name: "Angela P.",
+    company: "Midland Co-working Space",
     rating: 5,
     review:
-      'Affordable, professional, and flexible with our schedule. A great local Perth business that genuinely cares about their clients.',
+      "Affordable, professional, and flexible with our schedule. A great local Perth business that genuinely cares about their clients.",
   },
   {
-    name: 'Tom B.',
-    company: 'West Perth Law Firm',
+    name: "Tom B.",
+    company: "West Perth Law Firm",
     rating: 5,
     review:
       "We switched to SmartSpace 6 months ago and haven't looked back. Impeccable results every time — our clients always comment on how clean the office looks.",
@@ -53,13 +53,18 @@ export default function TestimonialsPage() {
   return (
     <>
       <Head>
-        <title>Client Testimonials | SmartSpace Commercial Cleaning Perth</title>
+        <title>
+          Client Testimonials | SmartSpace Commercial Cleaning Perth
+        </title>
         <meta
           name="description"
           content="See what Perth businesses say about SmartSpace Commercial Cleaning. Trusted by offices, clinics, restaurants and schools across Western Australia."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://smartspacecleaning.com.au/testimonials" />
+        <link
+          rel="canonical"
+          href="https://smartspacecleaning.com.au/testimonials"
+        />
         <meta
           property="og:title"
           content="Client Testimonials | SmartSpace Commercial Cleaning Perth"
@@ -77,8 +82,8 @@ export default function TestimonialsPage() {
             What Our Clients Say
           </h1>
           <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
-            Don&rsquo;t just take our word for it — hear from the Perth businesses
-            that trust SmartSpace every day.
+            Don&rsquo;t just take our word for it — hear from the Perth
+            businesses that trust SmartSpace every day.
           </p>
         </section>
       </FadeInSection>
@@ -104,12 +109,14 @@ export default function TestimonialsPage() {
             </div>
             <div className="hidden sm:block w-px h-16 bg-gray-200" />
             <div>
-              <p className="text-5xl font-extrabold text-blue-700">500+</p>
-              <p className="text-sm text-gray-500 mt-1">Happy clients across Perth &amp; WA</p>
+              <p className="text-5xl font-extrabold text-blue-700">30+</p>
+              <p className="text-sm text-gray-500 mt-1">
+                Happy clients across Perth &amp; WA
+              </p>
             </div>
             <div className="hidden sm:block w-px h-16 bg-gray-200" />
             <div>
-              <p className="text-5xl font-extrabold text-blue-700">8+</p>
+              <p className="text-5xl font-extrabold text-blue-700">20+</p>
               <p className="text-sm text-gray-500 mt-1">Years of excellence</p>
             </div>
           </div>
@@ -139,10 +146,11 @@ export default function TestimonialsPage() {
       <FadeInSection>
         <section className="bg-gradient-to-r from-blue-700 to-blue-500 py-20 text-white text-center px-4">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
-            Join 500+ Happy Perth Businesses
+            Join 30+ Happy Perth Businesses
           </h2>
           <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
-            Experience the SmartSpace difference for yourself. Get a free, no-obligation quote today.
+            Experience the SmartSpace difference for yourself. Get a free,
+            no-obligation quote today.
           </p>
           <Link
             href="/contact"
