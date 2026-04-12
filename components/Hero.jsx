@@ -1,26 +1,48 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-/**
- * Hero
- * Full-viewport hero section with an Unsplash background image,
- * a dark overlay for text contrast, headline, subtext, and two CTA buttons.
- *
- * Uses CSS background-image (not Next.js <Image />) to avoid per-page
- * domain config complexity for the hero specifically.
- */
+/* ── Slideshow images ─────────────────────────────────────────────────── */
+const heroImages = [
+  'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&auto=format&fit=crop',
+];
+
+const SLIDE_DURATION = 5000; // ms between slides
+
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  /* Auto-advance every SLIDE_DURATION ms */
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, SLIDE_DURATION);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section
-      className="relative flex items-center justify-center min-h-screen bg-center bg-cover"
-      style={{
-        backgroundImage:
-          'url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&auto=format&fit=crop")',
-      }}
-    >
+    <section className="relative flex items-center justify-center min-h-screen overflow-hidden">
+
+      {/* ── Background slides — stacked, crossfade via opacity ── */}
+      {heroImages.map((src, i) => (
+        <div
+          key={src}
+          aria-hidden="true"
+          className="absolute inset-0 bg-center bg-cover transition-opacity duration-1000"
+          style={{
+            backgroundImage: `url("${src}")`,
+            opacity: i === current ? 1 : 0,
+          }}
+        />
+      ))}
+
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
 
-      {/* Content */}
+      {/* ── Content ── */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
         {/* Badge */}
         <span className="inline-block mb-5 px-4 py-1.5 bg-blue-600/80 text-sm font-medium rounded-full tracking-wide backdrop-blur-sm">
@@ -54,8 +76,24 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* ── Dot indicators ── */}
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+        {heroImages.map((_, i) => (
+          <button
+            key={i}
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => setCurrent(i)}
+            className={`rounded-full transition-all duration-300 ${
+              i === current
+                ? 'w-6 h-2 bg-white'
+                : 'w-2 h-2 bg-white/50 hover:bg-white/80'
+            }`}
+          />
+        ))}
+      </div>
+
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/60 text-xs animate-bounce">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/60 text-xs animate-bounce">
         <span>Scroll down</span>
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
